@@ -21,3 +21,50 @@
 6. 如果数字中包含了5，那么忽略规则4和规则5，并且忽略被3整除的判定，比如要报35的同学不报Fizz，报BuzzWhizz，其他case自己补齐。
 
 7. 如果数字中包含了7，则忽略被5整除的判定，若同时还包含5，就忽略规则6中忽略被3整除的判定，比如要报75的同学只报Fizz，其他case自己补齐。
+
+## 需求总结
+1. 普通数字返回数字本身
+2. 3的倍数 => Fizz，5的倍数 => Buzz，7的倍数 => Whizz
+3. 整除规则可以任意组合
+4. 包含数字3则忽略整除规则，显示Fizz
+5. 包含5则忽略包含3的规则和被3整除的判定，总结说就是看所报数字：
+    - 被5整除 Buzz，比如 15
+    - 被7整除 Whizz，比如 56
+    - 同时被5，7整除 BuzzWhizz，比如 35
+6. 包含7，忽略被5整除的判定
+    - 包含5，忽略包含3的规则
+        - 不包含3 => 被3，7整除 ，比如，75对应Fizz
+        - 包含3 => 被3，7整除，比如，357对应FizzWhizz
+    - 不包含5
+        - 包含3 => 包含3的规则，比如，73对应Fizz 
+        - 不包含3 => 被3，7整除，比如，7对应Whizz
+
+## Tasking
+/* 普通数字 */
+- Given 数字4满足不包含3，5，7 且不能被3，5，7整除 When 玩游戏 Then 学生报4
+
+/* 3，5，7的倍数 */
+- Given 数字6满足只被3整除 When 玩游戏 Then 学生报Fizz
+- Given 数字10满足只被5整除  When 玩游戏 Then 学生报Buzz
+- Given 数字14满足只被7整除 When 玩游戏 Then 学生报Whizz
+
+/* 15，21，35，105的倍数 */
+- Given 数字60满足同时被3和5整除 When 玩游戏 Then 学生报FizzBuzz
+- Given 数字21满足同时被3和7整除 When 玩游戏 Then 学生报FizzWhizz
+- Given 数字140满足同时被5和7整除 When 玩游戏 Then 学生报BuzzWhizz
+- Given 数字210满足同时被3和5和7整除 When 玩游戏 Then 学生报FizzBuzzWhizz
+
+/* 包含3 */
+- Given 数字13只包含3 When 玩游戏 Then 学生报Fizz
+- Given 数字30满足被3和5整除，且包含3 When 玩游戏 Then 学生报Fizz
+
+/* 包含5 */
+- Given 数字15满足被5整除，且包含5 When 玩游戏 Then 学生报Buzz
+- Given 数字56满足被7整除，且包含5 When 玩游戏 Then 学生报Whizz
+- Given 数字35满足被5和7整除，且包含5 When 玩游戏 Then 学生报BuzzWhizz
+
+/* 包含 7*/
+- Given 数字75满足被3整除，且包含7和5 When 玩游戏 Then 学生报Fizz
+- Given 数字357满足被3和7整除，且包含7和5和3 When 玩游戏 Then 学生报FizzWhizz
+- Given 数字378，包含7和3 When 玩游戏 Then 学生报Fizz
+- Given 数字70满足被7整除，且包含7 When 玩游戏 Then 学生报Whizz
