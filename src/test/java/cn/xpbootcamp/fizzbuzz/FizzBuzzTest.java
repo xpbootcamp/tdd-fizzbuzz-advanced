@@ -130,4 +130,31 @@ public class FizzBuzzTest {
 
         Assert.assertEquals("Fizz", result);
     }
+
+    @Test
+    public void should_return_Fizz_when_play_game_given_number_contain_7_and_divide_by_3_7() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(357);
+
+        Assert.assertEquals("FizzWhizz", result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_play_game_given_number_contain_7_3() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(378);
+
+        Assert.assertEquals("Fizz", result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_play_game_given_number_contain_7_and_divide_by_7() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(70);
+
+        Assert.assertEquals("Whizz", result);
+    }
 }
