@@ -20,6 +20,6 @@ public class FizzBuzz {
         if (number % 7 == 0) {
             result += "Whizz";
         }
-        return result.isEmpty() ? String.valueOf(number) : result;
+        return result.isEmpty() ? numberStr : result;
     }
 }
