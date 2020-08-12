@@ -49,4 +49,13 @@ public class FizzBuzzTest {
 
         Assert.assertEquals("FizzBuzz", result);
     }
+
+    @Test
+    public void should_return_FizzWhizz_when_play_game_given_number_divide_by_21() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(21);
+
+        Assert.assertEquals("FizzWhizz", result);
+    }
 }
