@@ -4,10 +4,13 @@ public class FizzBuzz {
     public String play(int number) {
         String result = "";
         String numberStr = String.valueOf(number);
-        if (numberStr.contains("3")) {
+        boolean isContains3 = numberStr.contains("3");
+        boolean isContains5 = numberStr.contains("5");
+
+        if (isContains3) {
             return "Fizz";
         }
-        if (number % 3 == 0) {
+        if (!isContains5 && number % 3 == 0) {
             result += "Fizz";
         }
         if (number % 5 == 0) {
