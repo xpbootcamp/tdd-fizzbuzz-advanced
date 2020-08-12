@@ -76,4 +76,13 @@ public class FizzBuzzTest {
 
         Assert.assertEquals("FizzBuzzWhizz", result);
     }
+
+    @Test
+    public void should_return_Fizz_when_play_game_given_number_contain_3() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(13);
+
+        Assert.assertEquals("Fizz", result);
+    }
 }
