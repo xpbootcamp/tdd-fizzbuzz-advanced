@@ -40,4 +40,13 @@ public class FizzBuzzTest {
 
         Assert.assertEquals("Whizz", result);
     }
+
+    @Test
+    public void should_return_FizzBuzz_when_play_game_given_number_divide_by_15() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(60);
+
+        Assert.assertEquals("FizzBuzz", result);
+    }
 }
