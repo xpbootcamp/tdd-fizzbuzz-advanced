@@ -103,4 +103,13 @@ public class FizzBuzzTest {
 
         Assert.assertEquals("Buzz", result);
     }
+
+    @Test
+    public void should_return_Whizz_when_play_game_given_number_contain_5_and_divide_by_7() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String result = fizzBuzz.play(56);
+
+        Assert.assertEquals("Whizz", result);
+    }
 }
