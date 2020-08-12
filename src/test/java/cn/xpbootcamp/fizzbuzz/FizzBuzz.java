@@ -7,7 +7,7 @@ public class FizzBuzz {
         boolean isContains3 = numberStr.contains("3");
         boolean isContains5 = numberStr.contains("5");
 
-        if (isContains3) {
+        if (!isContains5 && isContains3) {
             return "Fizz";
         }
         if (!isContains5 && number % 3 == 0) {
